@@ -1,0 +1,1705 @@
+.dcore {
+    position: relative
+}
+
+.dcore .attachment .thumb {
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin-right: 4px;
+    width: 50px;
+    height: 50px
+}
+
+.dcore .no-entry {
+    font-size: 12px;
+    color: #aaa;
+    padding: 20px 0
+}
+
+.dcore .f-msg {
+    margin-bottom: 20px
+}
+
+.text-highlight {
+    background: #fd0;
+    display: inline !important
+}
+
+textarea.editor {
+    visibility: hidden
+}
+
+.dcore-row {
+    margin-bottom: 10px
+}
+
+.dcore-row input:not([type]), .dcore-row input[type="text"], .dcore-row input[type="text"].select-dropdown, .dcore-row input[type="password"], .dcore-row input[type="email"], .dcore-row input[type="url"], .dcore-row input[type="time"], .dcore-row input[type="date"], .dcore-row input[type="datetime"], .dcore-row input[type="datetime-local"], .dcore-row input[type="tel"], .dcore-row input[type="number"], .dcore-row input[type="search"], .dcore-row select, .dcore-row textarea {
+    margin-bottom: 0
+}
+
+.dcore-message {
+    height: 30rem
+}
+
+.dcore-message h1 {
+    margin-top: 0
+}
+
+.dcore-message h1 .fa {
+    color: #444
+}
+
+.dcore-pagination {
+    margin: 2px 0
+}
+
+.dcore-pagination li a {
+    transition: .3s all
+}
+
+.dcore-pagination li a:hover {
+    opacity: .5
+}
+
+.dcore-pagination li.active {
+    background-color: #333;
+    border-radius: 0
+}
+
+.dcore-pagination li.active a {
+    cursor: default
+}
+
+.dcore-pagination li.active a:hover {
+    opacity: 1
+}
+
+.dcore-buttons .btn {
+    margin-bottom: 5px
+}
+
+@media only screen and (max-width: 600px) {
+    .dcore-buttons .btn {
+        display: block;
+        width: 100%
+    }
+
+    .dcore-buttons.fake-prefix {
+        padding-left: 0
+    }
+}
+
+.dcore-zoom-cover {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #f7f7f7;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 3s transform, .6s opacity;
+    will-change: transform;
+    transform-origin: 50% 50%
+}
+
+.dcore-zoom-in .dcore-zoom-cover {
+    transform: scale3d(1, 1, 1) rotate(0deg)
+}
+
+.dcore-zoom-in:hover .dcore-zoom-cover {
+    transform: scale3d(1.05, 1.05, 1) rotate(0.001deg);
+    transition: 4s transform
+}
+
+.dcore-zoom-out .dcore-zoom-cover {
+    transform: scale3d(1.05, 1.05, 1) rotate(0.001deg)
+}
+
+.dcore-zoom-out:hover .dcore-zoom-cover {
+    transform: scale3d(1, 1, 1) rotate(0deg);
+    transition: 4s transform
+}
+
+.dcore-thumbnails .item {
+    padding-bottom: 15px;
+    margin-bottom: 35px
+}
+
+.dcore-thumbnails .item.item-current {
+    background-color: #f7f7f7;
+    padding-top: 15px
+}
+
+.dcore-thumbnails .item.item-current a.link {
+    cursor: default;
+    transition: .3s opacity
+}
+
+.dcore-thumbnails .item.item-current a.link .image .screen {
+    opacity: .1
+}
+
+.dcore-thumbnails .item.item-current a.link .info {
+    color: #777
+}
+
+.dcore-thumbnails .item.item-current a.link .info .title {
+    color: #333
+}
+
+.dcore-thumbnails .item.item-current a.link .info small {
+    color: #777
+}
+
+.dcore-thumbnails .item.item-current a.link .info .summary {
+    border-color: #ccc
+}
+
+.dcore-thumbnails .item-hidden {
+    opacity: .4 !important
+}
+
+.dcore-thumbnails a.link {
+    display: block
+}
+
+.dcore-thumbnails a.link .image {
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%
+}
+
+.dcore-thumbnails a.link .image .screen {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0;
+    transition: all .3s ease-out
+}
+
+.dcore-thumbnails a.link .image .play {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: '';
+    overflow: hidden;
+    border: 10px solid transparent;
+    border-left: 20px solid #fff;
+    margin-top: -10px;
+    margin-left: -10px;
+    opacity: 1;
+    transition: all .3s ease-out
+}
+
+.dcore-thumbnails a.link .info {
+    display: block;
+    line-height: 24px;
+    overflow: hidden;
+    font-size: 16px;
+    color: #777;
+    transition: .3s color, .3s background-color, .3s border-color
+}
+
+.dcore-thumbnails a.link .info small {
+    color: #bbb;
+    font-size: 14px;
+    transition: .3s color, .3s background-color, .3s border-color
+}
+
+.dcore-thumbnails a.link .info .spans {
+    display: block;
+    float: right
+}
+
+.dcore-thumbnails a.link .info .spans .span {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 10px;
+    color: #666
+}
+
+.dcore-thumbnails a.link .info .summary {
+    max-height: 100px;
+    font-size: 12px;
+    line-height: 20px;
+    display: block;
+    color: #bbb
+}
+
+.dcore-thumbnails a.link:hover {
+    text-decoration: none
+}
+
+.dcore-thumbnails a.link:hover span.image .screen {
+    opacity: .1
+}
+
+.dcore-thumbnails a.link:hover span.image .play {
+    opacity: 0
+}
+
+.dcore-thumbnails a.link:hover span.info {
+    color: #000
+}
+
+.dcore-thumbnails a.link:hover span.info small {
+    color: #777
+}
+
+.dcore-thumbnails img.thumb {
+    width: 100%;
+    height: auto
+}
+
+.dcore-thumbnails .dcore-list-check-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px
+}
+
+span.dcore-list-check-all {
+    font-size: 0;
+    display: inline-block;
+    margin: 0;
+    margin-right: 1rem;
+    width: 18px;
+    height: 18px;
+    margin-top: 8px;
+    vertical-align: top
+}
+
+span.dcore-list-check-all label {
+    display: block;
+    padding: 0;
+    width: 18px;
+    height: 18px
+}
+
+@media only screen and (max-width: 600px) {
+    span.dcore-list-check-all {
+        margin-right: 0;
+        margin-bottom: 10px;
+        float: left
+    }
+}
+
+.dcore-list-header {
+    margin-bottom: 2.5rem
+}
+
+.dcore-search {
+    position: relative;
+    margin-bottom: 1rem
+}
+
+.dcore-search input {
+    margin: 0;
+    padding-right: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 36px;
+    line-height: 36px
+}
+
+.dcore-search button {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    background: transparent;
+    border: none;
+    padding: 0;
+    transition: .3s color;
+    color: #888
+}
+
+.dcore-search button:hover {
+    color: #000
+}
+
+.dcore-view-header {
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 2rem
+}
+
+.dcore-actions {
+    float: right
+}
+
+.dcore-actions .dropdown-button {
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    color: #888;
+    transition: .3s color
+}
+
+.dcore-actions .dropdown-button i {
+    font-size: 30px
+}
+
+.dcore-actions .dropdown-button:hover {
+    color: #000
+}
+
+.dcore-view-header .dcore-actions {
+    margin-top: 8px
+}
+
+.dcore-post-actions .dcore-actions {
+    margin-top: 9px
+}
+
+html.pc .dcore-view-header .dcore-actions .dropdown-button {
+    opacity: 0;
+    transition: .3s opacity
+}
+
+html.pc .dcore-view-header .dcore-actions .dropdown-button.active, html.pc .dcore:hover .dcore-view-header .dcore-actions .dropdown-button {
+    opacity: 1
+}
+
+.dcore-view-header .dcore-attachments {
+    position: absolute;
+    right: 0;
+    bottom: 1rem
+}
+
+.dcore-view-header .dcore-attachments .dropdown-content {
+    margin-top: 0.4rem
+}
+
+.dcore-info {
+    margin-top: 20px
+}
+
+.dcore-info, .dcore-info a {
+    font-size: 11px;
+    color: #888
+}
+
+.dcore-info .span {
+    width: auto
+}
+
+.dcore-info-item {
+    margin-right: 1em;
+    white-space: nowrap;
+    display: inline-block;
+    line-height: 2
+}
+
+.dcore-info-item a {
+    display: inline-block
+}
+
+.dcore-info-item a:hover {
+    text-decoration: underline
+}
+
+.dcore-title {
+    padding-right: 60px;
+    margin-top: 0
+}
+
+h2.dcore-price {
+    margin-top: 0
+}
+
+h2.dcore-price small {
+    display: inline-block;
+    text-decoration: line-through;
+    font-size: .2;
+    font-weight: 300
+}
+
+.dcore-body {
+    margin-bottom: 30px
+}
+
+.dcore-body img {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    width: auto !important;
+    height: auto !important
+}
+
+.dcore-body p:first-child {
+    margin-top: 0
+}
+
+.dcore-body ol, .dcore-body ul {
+    padding-left: 1.6em;
+    margin-top: 0.3em;
+    margin-bottom: 0.7em
+}
+
+.dcore-body ol li, .dcore-body ul li {
+    margin-top: 0.2em;
+    margin-bottom: 0.4em
+}
+
+.dcore-body ul, .dcore-body ul li {
+    list-style-type: disc
+}
+
+.dcore-body ul ul, .dcore-body ul ul li {
+    list-style-type: circle
+}
+
+.dcore-body table {
+    width: 100% !important
+}
+
+@media only screen and (max-width: 600px) {
+    .dcore-body > p > br, .dcore-body > div > br {
+        display: none
+    }
+}
+
+.page-body {
+    min-height: 300px
+}
+
+@media only screen and (max-width: 600px) {
+    .table-wrap {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .table-wrap table th, .table-wrap table td {
+        white-space: nowrap
+    }
+}
+
+.dcore-actions-comment {
+    text-align: right;
+    margin-bottom: 10px
+}
+
+.dcore-replies {
+    margin-bottom: 30px
+}
+
+.dcore-reply {
+    margin-bottom: 10px;
+    position: relative
+}
+
+.dcore-reply .info {
+    font-size: 12px;
+    color: #777;
+    margin-top: 12px
+}
+
+.dcore-reply .dcore-actions {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px
+}
+
+.dcore-image-slide {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin-bottom: 20px
+}
+
+.dcore-image-slide img {
+    max-width: 100%;
+    height: auto
+}
+
+.dcore-image-slide a.link {
+    display: block;
+    text-decoration: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top
+}
+
+.dcore-image-slide a.link:hover {
+    cursor: nesw-resize;
+    cursor: zoom-in
+}
+
+.dcore-image-slide a.link .caption {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    padding: 10px 15px;
+    text-align: left
+}
+
+.dcore-image-view p {
+    margin-top: 0;
+    margin-bottom: 15px
+}
+
+.dcore-image-view a:hover {
+    cursor: nesw-resize;
+    cursor: zoom-in
+}
+
+.dcore-image-view img {
+    display: block;
+    width: 100%;
+    height: auto
+}
+
+.dcore-image-view .image {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-bottom: 20px
+}
+
+.dcore-add-to-wishlist {
+    font-size: 20px
+}
+
+.dcore-add-to-wishlist a {
+    color: #ccc
+}
+
+.dcore-add-to-wishlist a.active {
+    color: #c00
+}
+
+.dcore-post-actions {
+    margin-top: 2rem
+}
+
+table.dcore-list {
+    color: #555
+}
+
+table.dcore-list th, table.dcore-list td {
+    padding: 0
+}
+
+table.dcore-list th {
+    white-space: nowrap;
+    vertical-align: middle
+}
+
+table.dcore-list th > span, table.dcore-list th > a, table.dcore-list td > span, table.dcore-list td > a {
+    display: inline-block;
+    color: #555;
+    line-height: 20px;
+    padding: 15px 12px;
+    position: relative
+}
+
+table.dcore-list .dcore-list-check-item > span {
+    width: 48px
+}
+
+table.dcore-list .dcore-list-check-item label {
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -11px;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    padding: 0
+}
+
+table.dcore-list.bordered tr:last-child {
+    border-bottom: none !important
+}
+
+table.dcore-list .mine {
+    color: #08c
+}
+
+table.dcore-list tr.sticky {
+    background-color: #fffde7
+}
+
+table.dcore-list tr.current {
+    background-color: #f7f7f7
+}
+
+table.dcore-list > tbody > tr.sticky > td.active:hover, table.dcore-list > tbody > tr.sticky > th.active:hover, table.dcore-list > tbody > tr.sticky:hover > td, table.dcore-list > tbody > tr.sticky:hover > th {
+    background-color: #faebcc
+}
+
+table.dcore-list .private, table.dcore-list .private a {
+    color: #999
+}
+
+@media print {
+    table.dcore-list th > span, table.dcore-list th > a, table.dcore-list td > span, table.dcore-list td > a {
+        display: block
+    }
+
+    table.dcore-list .dcore-list-check-item {
+        width: 1%;
+        white-space: nowrap
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    table.dcore-list th > span, table.dcore-list th > a, table.dcore-list td > span, table.dcore-list td > a {
+        display: block
+    }
+
+    table.dcore-list .dcore-list-check-item {
+        width: 1%;
+        white-space: nowrap
+    }
+}
+
+#ui-datepicker-div {
+    font-size: 12px
+}
+
+#ui-datepicker-div select {
+    width: auto;
+    height: auto
+}
+
+.dcore-event-calendar .calendar-area {
+    position: relative
+}
+
+.dcore-event-calendar #loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none
+}
+
+.dcore-event-calendar .fc-header-left span {
+    display: inline-block;
+    padding: 0 4px
+}
+
+.dcore-event-calendar .fc-header-left a {
+    display: inline-block;
+    line-height: 24px
+}
+
+.dcore-event-calendar .fc-header-left a:hover {
+    color: #333
+}
+
+.dcore-event-calendar .fc-header-left a.prev {
+    margin-right: 5px
+}
+
+.dcore-event-calendar .fc-header-center span {
+    display: inline-block;
+    padding: 0 4px
+}
+
+.dcore-event-calendar .fc-header-center a {
+    display: inline-block;
+    line-height: 24px;
+    padding: 0 4px
+}
+
+.dcore-event-calendar .fc-header-center a:hover {
+    color: #333
+}
+
+.dcore-event-calendar .fc-header-left a.next {
+    margin-left: 5px
+}
+
+.dcore-event-calendar .fc-border-separate th {
+    padding: .7em .3em;
+    background: #f0f0f0
+}
+
+.dcore-event-calendar .fc-border-separate td {
+    width: 1%
+}
+
+.dcore-event-calendar .fc-widget-header {
+    font-size: 12px
+}
+
+.dcore-event-calendar .fc-day-number {
+    font-size: 12px;
+    padding: 6px
+}
+
+.dcore-event-calendar .fc-button-content {
+    font-family: Arial, sans-serif
+}
+
+.dcore-event-calendar .fc-button-effect span {
+    background: transparent
+}
+
+.dcore-event-calendar .fc-grid .fc-day-number {
+    padding-top: 5px;
+    padding-right: 5px
+}
+
+.dcore-event-calendar a.fc-event {
+    opacity: .8
+}
+
+.dcore-event-calendar a.fc-event:hover {
+    opacity: 1
+}
+
+.dcore-event-calendar .fc-event-title {
+    word-wrap: break-word
+}
+
+.dcore-event-calendar .page-header, .dcore-event-calendar .page-header h3 {
+    margin-top: 0
+}
+
+.dcore-event-calendar .end-of-body {
+    height: 30px;
+    overflow: hidden
+}
+
+.dcore-video-view {
+    margin: 20px 0
+}
+
+.dcore-flickr-view {
+    margin-bottom: 30px;
+    min-height: 30px;
+    position: relative
+}
+
+.dcore-flickr-view .loading {
+    position: absolute;
+    left: 50%;
+    top: 15px
+}
+
+.dcore-flickr-view .item {
+    margin-bottom: 30px;
+    position: relative
+}
+
+.dcore-flickr-view .item a.download {
+    position: absolute;
+    display: block;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    right: 20px;
+    bottom: 10px;
+    opacity: 0;
+    transition: .3s opacity, .3s background-color;
+    font-size: 12px
+}
+
+.dcore-flickr-view .item a.download:hover {
+    background-color: #F44336 !important
+}
+
+.dcore-flickr-view .item:hover a.download {
+    opacity: 1
+}
+
+.dcore-flickr-view .item .image {
+    display: block;
+    background-color: '#f2f2f2';
+    background-repeat: 'no-repeat';
+    background-size: 'cover';
+    background-position: 'center';
+    height: 0
+}
+
+.dcore-flickr-view .dcore-flickr-go-to-set {
+    text-align: center
+}
+
+@media only screen and (min-width: 601px) {
+    .dcore-flickr-view .dcore-flickr-go-to-set {
+        transition: .3s opacity;
+        opacity: 0
+    }
+
+    .dcore-flickr-view:hover .dcore-flickr-go-to-set {
+        opacity: 1
+    }
+}
+
+.issuuembed {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden
+}
+
+.issuuembed > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important
+}
+
+.issuuembed > div:first-child {
+    z-index: 10
+}
+
+.issuuembed > div > div:first-child {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important
+}
+
+.issuuembed > div > div:last-child {
+    display: none
+}
+
+.issuuembed > div > div > span {
+    display: none
+}
+
+.issuuembed a.read-link img {
+    top: 5% !important
+}
+
+@media print {
+    .end-of-post {
+        display: none !important
+    }
+}
+
+form.dcore-add-to-cart {
+    position: relative
+}
+
+form.dcore-add-to-cart .block-screen {
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none
+}
+
+form.dcore-add-to-cart .buttons {
+    position: relative;
+    margin-bottom: 10px
+}
+
+form.dcore-add-to-cart .loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+form.dcore-add-to-cart .loading .spinner {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%
+}
+
+form.dcore-add-to-cart .loading .screen {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: .5
+}
+
+.dcore-cart {
+    position: relative;
+    min-height: 100px
+}
+
+.dcore-cart .loading {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0
+}
+
+.dcore-cart .loading .screen {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    opacity: .5
+}
+
+.dcore-cart .loading .spin {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%
+}
+
+.dcore-cart .dcore-cart-list table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid #555
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr, .dcore-cart .dcore-cart-list table > tbody > tr {
+    transition: .3s opacity
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr > th, .dcore-cart .dcore-cart-list table > thead > tr > td, .dcore-cart .dcore-cart-list table > tbody > tr > th, .dcore-cart .dcore-cart-list table > tbody > tr > td {
+    text-align: center;
+    border-bottom: 1px solid #ebebeb
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr > th > .title, .dcore-cart .dcore-cart-list table > thead > tr > td > .title, .dcore-cart .dcore-cart-list table > tbody > tr > th > .title, .dcore-cart .dcore-cart-list table > tbody > tr > td > .title {
+    display: none
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr > th.item-image, .dcore-cart .dcore-cart-list table > thead > tr > td.item-image, .dcore-cart .dcore-cart-list table > tbody > tr > th.item-image, .dcore-cart .dcore-cart-list table > tbody > tr > td.item-image {
+    width: 1%
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr > th.item-image a, .dcore-cart .dcore-cart-list table > thead > tr > td.item-image a, .dcore-cart .dcore-cart-list table > tbody > tr > th.item-image a, .dcore-cart .dcore-cart-list table > tbody > tr > td.item-image a {
+    display: block
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr > th.item-image a img, .dcore-cart .dcore-cart-list table > thead > tr > td.item-image a img, .dcore-cart .dcore-cart-list table > tbody > tr > th.item-image a img, .dcore-cart .dcore-cart-list table > tbody > tr > td.item-image a img {
+    display: block;
+    width: 100px
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr > th.item-title, .dcore-cart .dcore-cart-list table > thead > tr > td.item-title, .dcore-cart .dcore-cart-list table > tbody > tr > th.item-title, .dcore-cart .dcore-cart-list table > tbody > tr > td.item-title {
+    text-align: left;
+    padding-left: 20px
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr > th.item-quantity, .dcore-cart .dcore-cart-list table > thead > tr > td.item-quantity, .dcore-cart .dcore-cart-list table > tbody > tr > th.item-quantity, .dcore-cart .dcore-cart-list table > tbody > tr > td.item-quantity {
+    width: 50px
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr > th.item-quantity input[type="number"], .dcore-cart .dcore-cart-list table > thead > tr > td.item-quantity input[type="number"], .dcore-cart .dcore-cart-list table > tbody > tr > th.item-quantity input[type="number"], .dcore-cart .dcore-cart-list table > tbody > tr > td.item-quantity input[type="number"] {
+    box-sizing: border-box;
+    display: inline-block;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0;
+    padding: 0;
+    min-width: 40px;
+    height: auto;
+    text-align: center
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr > th.item-delete, .dcore-cart .dcore-cart-list table > thead > tr > td.item-delete, .dcore-cart .dcore-cart-list table > tbody > tr > th.item-delete, .dcore-cart .dcore-cart-list table > tbody > tr > td.item-delete {
+    text-align: right
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr .msg-out-of-stock, .dcore-cart .dcore-cart-list table > tbody > tr .msg-out-of-stock {
+    transition: .3s opacity;
+    opacity: 0
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr.out-of-stock, .dcore-cart .dcore-cart-list table > tbody > tr.out-of-stock {
+    opacity: .5
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr.out-of-stock .msg-out-of-stock, .dcore-cart .dcore-cart-list table > tbody > tr.out-of-stock .msg-out-of-stock {
+    opacity: 1
+}
+
+.dcore-cart .dcore-cart-list table > thead > tr:last-child > td, .dcore-cart .dcore-cart-list table > tbody > tr:last-child > td {
+    border-bottom: 1px solid #555
+}
+
+.dcore-cart .dcore-cart-list button.delete {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: #999;
+    transition: .3s color
+}
+
+.dcore-cart .dcore-cart-list button.delete:hover {
+    color: #555
+}
+
+@media only screen and (max-width: 600px) {
+    .dcore-cart .dcore-cart-list table {
+        display: block;
+        border-bottom: 1px solid #555
+    }
+
+    .dcore-cart .dcore-cart-list table > thead {
+        display: none
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody {
+        display: block
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr {
+        display: block;
+        margin: 0;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        position: relative;
+        border-bottom: 1px solid #ebebeb
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr:after {
+        content: '';
+        display: table;
+        clear: both
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td {
+        line-height: 20px;
+        display: block;
+        border: none !important;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 5px;
+        float: right;
+        width: calc(100% - 110px)
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td:after {
+        content: '';
+        display: table;
+        clear: both
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td > .title, .dcore-cart .dcore-cart-list table > tbody > tr > td > .data {
+        display: block;
+        float: left
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td > .title {
+        width: 40%;
+        color: #999;
+        font-size: 13px;
+        padding-right: 10px
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td > .data {
+        width: 60%
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td.item-title {
+        margin-bottom: 15px;
+        padding-left: 0;
+        padding-right: 20px
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td.item-image {
+        width: 90px;
+        margin-right: 20px;
+        float: left
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td.item-image a img {
+        display: block;
+        width: 100%
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td.item-quantity {
+        width: calc(100% - 110px)
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td.item-quantity input[type="number"] {
+        font-size: 16px;
+        text-align: left
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td.item-delete {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        width: auto
+    }
+
+    .dcore-cart .dcore-cart-list table > tbody > tr > td.item-delete button.delete {
+        font-size: 20px;
+        width: 20px;
+        text-align: right
+    }
+}
+
+.dcore-cart-items > .item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebebeb
+}
+
+.dcore-cart-items > .item:after {
+    content: '';
+    display: table;
+    clear: both
+}
+
+.dcore-cart-items > .item .image {
+    float: left;
+    width: 150px;
+    max-width: calc(100% - 160px)
+}
+
+.dcore-cart-items > .item .image a, .dcore-cart-items > .item .image span {
+    display: block
+}
+
+.dcore-cart-items > .item .image a img, .dcore-cart-items > .item .image span img {
+    display: block;
+    width: 100%
+}
+
+.dcore-cart-items > .item .info {
+    float: right;
+    width: calc(100% - 150px);
+    min-width: 160px;
+    padding-left: 20px
+}
+
+.dcore-cart-items > .item .info > div {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px
+}
+
+.dcore-cart-items > .item .info > div:after {
+    content: '';
+    display: table;
+    clear: both
+}
+
+.dcore-cart-items > .item .info > div .title {
+    width: 40%;
+    float: left;
+    padding-right: 10px
+}
+
+.dcore-cart-items > .item .info > div .data {
+    width: 60%;
+    float: left
+}
+
+.dcore-cart-items > .item .info > div.item-title {
+    font-size: 16px;
+    margin-bottom: 15px
+}
+
+.dcore-cart-items > .item .info > div.item-title a {
+    text-align: left
+}
+
+.dcore-cart-items > .item:last-child {
+    margin-bottom: 0
+}
+
+.dcore-cart-summary > .items > .item {
+    border-bottom: 1px solid #555;
+    padding: 20px 0
+}
+
+.dcore-cart-summary > .items > .item:after {
+    content: '';
+    display: table;
+    clear: both
+}
+
+.dcore-cart-summary > .items > .item > .title, .dcore-cart-summary > .items > .item > .data {
+    width: 50%;
+    float: left
+}
+
+.dcore-cart-summary > .items > .item > .data {
+    text-align: right
+}
+
+.dcore-cart-summary > .items > .item:last-child {
+    border-bottom: none
+}
+
+.dcore-sections-wrap {
+    position: relative
+}
+
+.dcore-sections-wrap .loading {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.dcore-sections-wrap .loading .spin {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%
+}
+
+.dcore-sections-wrap .loading:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: .5
+}
+
+.product-options .card .actions, .dcore-sections .card .actions {
+    font-size: 0
+}
+
+.product-options .card .actions a, .product-options .card .actions button, .dcore-sections .card .actions a, .dcore-sections .card .actions button {
+    font-size: 1rem;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    margin-right: 0 !important;
+    margin-left: 1rem;
+    color: #ccc !important;
+    outline: none;
+    background: none;
+    border: none;
+    transition: .3s color
+}
+
+.product-options .card .actions a:hover, .product-options .card .actions button:hover, .dcore-sections .card .actions a:hover, .dcore-sections .card .actions button:hover {
+    color: #333 !important
+}
+
+.product-options .card .card-action, .dcore-sections .card .card-action {
+    cursor: move;
+    transition: .3s background-color
+}
+
+.product-options .card .card-action:hover, .dcore-sections .card .card-action:hover {
+    background-color: #f7f7f7
+}
+
+@media print {
+    .dsticky {
+        zoom: 1;
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: 0
+    }
+
+    .dsticky:before, .dsticky:after {
+        content: '';
+        display: table
+    }
+
+    .dsticky:after {
+        clear: both
+    }
+
+    .dsticky-wrapper {
+        position: relative
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .dsticky {
+        zoom: 1;
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: 0
+    }
+
+    .dsticky:before, .dsticky:after {
+        content: '';
+        display: table
+    }
+
+    .dsticky:after {
+        clear: both
+    }
+
+    .dsticky-wrapper {
+        position: relative
+    }
+}
+
+.dcore-loading {
+    display: none;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    cursor: wait;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 0.5;
+}
+
+.dcore-loading .preloader-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -32px;
+    margin-left: -32px
+}
+
+.dcore-tabs {
+    font-size: 0;
+    white-space: nowrap
+}
+
+.dcore-tabs .dcore-tab {
+    display: inline-block;
+    font-size: 1rem;
+    vertical-align: bottom;
+    float: none !important;
+    min-width: 20%
+}
+
+.dcore-tabs .dcore-tab a {
+    display: block;
+    text-align: center;
+    transition: .3s background-color;
+    padding: 0 1rem
+}
+
+.dcore-tabs .dcore-tab a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1)
+}
+
+.dcore-tabs .dcore-tab a.active {
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.dcore-tabs .dcore-tab a .chip {
+    font-size: 12px;
+    font-weight: 500;
+    height: auto;
+    line-height: 1.5;
+    padding: 0 0.6em
+}
+
+.dcore-tabs-contents {
+    padding-top: 20px
+}
+
+.dcore-cart-count {
+    transition: .3s opacity
+}
+
+.dcore-cart-count.dcore-cart-count-0 {
+    opacity: 0
+}
+
+.dcore-cart-count-outer {
+    position: relative;
+    z-index: 100;
+    overflow: visible !important
+}
+
+.dcore-cart-count-outer .dcore-cart-count {
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    right: -2px;
+    background: #e00;
+    line-height: 16px;
+    height: 16px;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 16px
+}
+
+.dcore-cart-count-outer .dcore-cart-count-items {
+    display: none
+}
+
+@media print {
+    .dcore-cart-count-outer .dcore-cart-count-items {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 340px;
+        margin-left: -170px;
+        transition: .3s opacity;
+        opacity: 0;
+        height: 0;
+        overflow: hidden
+    }
+
+    .dcore-cart-count-outer .dcore-cart-count-items .dcore-cart-count-items-outer {
+        background-color: #fff;
+        font-size: 14px;
+        border: 1px solid #e6e6e6;
+        border-top: none
+    }
+
+    .dcore-cart-count-outer .dcore-cart-count-items .dcore-cart-count-items-outer .dcore-cart-count-items-inner {
+        padding: 15px;
+        padding-top: 5px;
+        padding-bottom: 0;
+        max-height: calc(100vh - 165px);
+        overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .dcore-cart-count-outer .dcore-cart-count-items .dcore-cart-count-items-outer .dcore-cart-count-items-checkout {
+        border-top: 1px solid #e6e6e6;
+        padding: 15px
+    }
+
+    .dcore-cart-count-outer.active- .dcore-cart-count-items, .dcore-cart-count-outer:hover .dcore-cart-count-items {
+        height: auto;
+        overflow: visible;
+        opacity: 1
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .dcore-cart-count-outer .dcore-cart-count-items {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 340px;
+        margin-left: -170px;
+        transition: .3s opacity;
+        opacity: 0;
+        height: 0;
+        overflow: hidden
+    }
+
+    .dcore-cart-count-outer .dcore-cart-count-items .dcore-cart-count-items-outer {
+        background-color: #fff;
+        font-size: 14px;
+        border: 1px solid #e6e6e6;
+        border-top: none
+    }
+
+    .dcore-cart-count-outer .dcore-cart-count-items .dcore-cart-count-items-outer .dcore-cart-count-items-inner {
+        padding: 15px;
+        padding-top: 5px;
+        padding-bottom: 0;
+        max-height: calc(100vh - 165px);
+        overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .dcore-cart-count-outer .dcore-cart-count-items .dcore-cart-count-items-outer .dcore-cart-count-items-checkout {
+        border-top: 1px solid #e6e6e6;
+        padding: 15px
+    }
+
+    .dcore-cart-count-outer.active- .dcore-cart-count-items, .dcore-cart-count-outer:hover .dcore-cart-count-items {
+        height: auto;
+        overflow: visible;
+        opacity: 1
+    }
+}
+
+.dcore-product-badge {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: #4c4c4c;
+    color: #fff;
+    font-size: 11px;
+    line-height: 20px;
+    padding: 2px 15px
+}
+
+.dcore-product-groups {
+    height: 30px;
+    font-size: 0;
+    margin-left: -8px;
+    margin-right: -8px
+}
+
+.dcore-product-groups .item {
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px
+}
+
+.dcore-product-groups .item a {
+    display: inline-block;
+    position: relative
+}
+
+.dcore-product-groups .item a span {
+    display: block
+}
+
+.dcore-product-groups .item a span.color {
+    background-color: #ebebeb;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden
+}
+
+.dcore-product-groups .item a span.color:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0;
+    transition: .3s opacity;
+    border-radius: 50%
+}
+
+.dcore-product-groups .item a span.fa {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    text-align: center;
+    line-height: 30px;
+    opacity: 0;
+    transition: .3s opacity;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
+}
+
+.dcore-product-groups .item a:hover span.color:before, .dcore-product-groups .item a.active span.color:before {
+    opacity: .03
+}
+
+.dcore-product-groups .item a:hover span.fa, .dcore-product-groups .item a.active span.fa {
+    opacity: 1
+}
+
+.dcore-order h5 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 0;
+    border-bottom: 1px solid #555;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    line-height: 26px
+}
+
+.dcore-order strong {
+    color: #777
+}
+
+.dcore-order-detail > .row > .col {
+    margin-top: 5px
+}
+
+.dcore-prices {
+    display: block;
+    font-size: 14px
+}
+
+.dcore-prices span {
+    display: inline-block
+}
+
+.dcore-prices span.regular-price {
+    text-decoration: line-through
+}
+
+.dcore-prices span.sale-price {
+    color: red
+}
+
+@media print {
+    .dcore-list-filters > .button {
+        margin-right: 10px
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .dcore-list-filters > .button {
+        margin-right: 10px
+    }
+}

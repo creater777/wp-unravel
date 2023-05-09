@@ -1,0 +1,125 @@
+.dmodal-html-clone {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    filter: blur(0);
+    transform: scale3d(1, 1, 1) rotate(0deg);
+    transition: .6s filter, .6s transform;
+    will-change: filter, transform
+}
+
+.dmodal-html-clone .dmodal-body-clone {
+    position: absolute;
+    width: 100%;
+    left: 0
+}
+
+.dmodal-html-clone.active- {
+    transform: scale3d(1, 1, 1) rotate(0.001deg);
+    filter: blur(6px)
+}
+
+.dmodal-wrap {
+    position: absolute;
+    z-index: 9998;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: .6s opacity
+}
+
+.dmodal-wrap.active- {
+    opacity: 1
+}
+
+.dmodal-wrap .dmodal-birdscreen {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    opacity: .6
+}
+
+.dmodal-wrap .dmodal-outer {
+    display: table;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%
+}
+
+.dmodal-wrap .dmodal-outer .dmodal-inner {
+    display: table-cell;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    vertical-align: middle
+}
+
+.dmodal-wrap .dmodal-outer .dmodal-inner .dmodal-content {
+    width: 90%;
+    max-width: 760px;
+    min-height: 20px;
+    padding: 20px 20px;
+    border: 1px solid #999;
+    background: #fff;
+    margin: 50px auto;
+    position: relative;
+    color: #777;
+    border-radius: 3px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2)
+}
+
+.dmodal-wrap .dmodal-outer .dmodal-inner .dmodal-content.alert- {
+    width: 300px;
+    max-width: 90%
+}
+
+.dmodal-wrap .dmodal-close {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    opacity: .5;
+    transition: .3s opacity;
+    outline: none;
+    border: none;
+    background: transparent
+}
+
+.dmodal-wrap .dmodal-close:before, .dmodal-wrap .dmodal-close:after {
+    content: '';
+    display: block;
+    background-color: #000;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0
+}
+
+.dmodal-wrap .dmodal-close:before {
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.dmodal-wrap .dmodal-close:after {
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
+
+.dmodal-wrap .dmodal-close:hover {
+    opacity: 1
+}
