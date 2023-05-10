@@ -238,8 +238,7 @@ $global_id = get_global();
 ?>
 <body id="page-works" class="dcore-scaff-mode-list korean page-works">
 
-<div class="dcore-loading loading"></div>
-<div id="pjax-wrapper">
+    <div class="dcore-loading loading"></div>
     <div id="feedback" class="modal">
         <a class="modal-feedback__close" href="#" rel="modal:close"></a>
         <div class="modal-feedback">
