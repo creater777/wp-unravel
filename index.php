@@ -20,7 +20,7 @@ $global_id = get_global();
         <div class="intro">
             <div class="video-wrapper">
                 <video autoplay loop muted playsinline>
-                    <source src="/wp-content/themes/wp_unravel/img/mobile.mp4" type="video/mp4">
+                    <source src="/wp-content/themes/wp_unravel/img/intro.mp4" type="video/mp4">
                 </video>
                 <div class="ticker">
                     <div class="ticker-wrapper">
