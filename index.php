@@ -81,6 +81,7 @@ $global_id = get_global();
         };
         fixBodyPosition();
         $(document).on('scroll', fixBodyPosition);
+        $(document).on('resize', fixBodyPosition);
 
         var ticker = $('.ticker'), tickerWrapper = $('.ticker-wrapper'), tickerItem = $('.ticker-wrapper__item'), left = 0, width = 0;
         while (width < ticker.width()){
