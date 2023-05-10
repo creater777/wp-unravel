@@ -212,7 +212,7 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/pages.min.css@mtime=1595226416.css"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/grailed.scss"/>
+          href="/wp-content/themes/wp_unravel/css/grailed.css"/>
 
     <!-- js -->
     <script type="text/javascript"
@@ -332,9 +332,11 @@ $global_id = get_global();
           $('.dcore-thumbnails .item a.link .info').removeClass('opacity-on')
         });
       })
+
       $('.modal-feedback__close').on('click', function () {
         $('.modal').modal('close');
       });
+
       $('input[type=file]').each(function () {
         var label = $(this).parents('.field__file-wrapper').find('.field__file-fake');
         var labelVal = label.text();

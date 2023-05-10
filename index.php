@@ -15,9 +15,10 @@
 get_header();
 $global_id = get_global();
 ?>
+<? if (empty(get_post()) || get_post()->post_type !== 'page'): ?>
     <div class="grailed">
         <div class="intro">
-            <div class="wrapper">
+            <div class="video-wrapper">
                 <video autoplay loop muted playsinline>
                     <source src="/wp-content/themes/wp_unravel/img/mobile.mp4" type="video/mp4">
                 </video>
@@ -39,6 +40,7 @@ $global_id = get_global();
 <!--        </div>-->
     </div>
     <div class="h-screen"></div>
+<?endif;?>
 
     <div id="body">
         <?php if (have_posts()) : ?>
@@ -67,15 +69,18 @@ $global_id = get_global();
     </div>
     <script>
       $(function () {
-        $(document).on('scroll', function (e) {
-          if ($(window).scrollTop() > $('.grailed').height()) {
+        var grailed = $('.grailed');
+        function fixBodyPosition(){
+          if ($(window).scrollTop() > grailed.height() || window.outerWidth > 992) {
             $('#body').css({'position': 'relative', 'top': '0px'});
             $('.h-screen').css({'display': 'none'});
           } else {
             $('#body').css({'position': 'fixed', 'top': '55px'});
             $('.h-screen').css({'display': 'block'});
           }
-        })
+        };
+        fixBodyPosition();
+        $(document).on('scroll', fixBodyPosition);
 
         var ticker = $('.ticker'), tickerWrapper = $('.ticker-wrapper'), tickerItem = $('.ticker-wrapper__item'), left = 0, width = 0;
         while (width < ticker.width()){
@@ -88,8 +93,6 @@ $global_id = get_global();
           if (Math.abs(left + 80) > tickerItem.width()){
             left += tickerItem.width() + 80;
             tickerWrapper.css({'left': left});
-            // tickerWrapper.css({'transform': 'translateX('+left+'px)'});
-            // tickerWrapper.css({'transition': 'none'});
           }
         }, 20);
       })

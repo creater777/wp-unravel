@@ -287,7 +287,7 @@
   .grailed {
     display: flow-root;
     position: relative;
-    height: 100vh;
+    height: calc(100vh - 55px);;
     z-index: 100;
     width: 100%;
     vertical-align: middle;
@@ -338,48 +338,53 @@
 
   .h-screen{
     height: 100vh;
+    visibility: hidden;
+    display: block;
   }
-  .wrapper {
+
+  .video-wrapper {
     max-width: 100%;
     overflow: hidden;
     height: calc(100vh - 55px);
     background-color: #fff;
+
+    video {
+      z-index: 10;
+      -o-object-fit: cover;
+      object-fit: cover;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: calc(100vh - 55px - 55px);
+      width: 100vw;
+      position: relative;
+      -o-object-position: center;
+      object-position: center;
+    }
   }
 
-  .wrapper video {
-    z-index: 10;
-    -o-object-fit: cover;
-    object-fit: cover;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: calc(100vh - 55px - 55px);
-    width: 100%;
-    position: relative;
-    -o-object-position: center;
-    object-position: center;
-    max-height: 100vh;
-  }
+
   .ticker {
     position: absolute;
     width: 100%;
     overflow: hidden;
-  }
-  .ticker-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    position: relative;
-    box-sizing: border-box;
-  }
-  .ticker-wrapper__item{
-    line-height: 2;
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    margin: 0 40px;
-    transition-delay: 1s;
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      position: relative;
+      box-sizing: border-box;
+
+      &__item{
+        line-height: 2;
+        font-weight: bold;
+        font-size: 18px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        margin: 0 40px;
+      }
+    }
   }
 
   .container .posts {
