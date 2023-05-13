@@ -71,17 +71,16 @@ $global_id = get_global();
       $(function () {
         var grailed = $('.grailed');
         function fixBodyPosition(){
-          if ($(window).scrollTop() > grailed.height() || window.outerWidth > 992) {
-            $('#body').css({'position': 'relative', 'top': '0px'});
+          if ($(window).scrollTop() > grailed.height()) {
+            $('#body').removeClass('fixed');
             $('.h-screen').css({'display': 'none'});
           } else {
-            $('#body').css({'position': 'fixed', 'top': '55px'});
+            $('#body').addClass('fixed');
             $('.h-screen').css({'display': 'block'});
           }
         };
         fixBodyPosition();
         $(document).on('scroll', fixBodyPosition);
-        $(document).on('resize', fixBodyPosition);
 
         var ticker = $('.ticker'), tickerWrapper = $('.ticker-wrapper'), tickerItem = $('.ticker-wrapper__item'), left = 0, width = 0;
         while (width < ticker.width()){

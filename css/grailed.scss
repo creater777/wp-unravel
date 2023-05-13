@@ -296,7 +296,13 @@
 
   #body {
     width: 100%;
+
   }
+  .fixed {
+    position: fixed;
+    top: 55px;
+  }
+
   .nav-group {
     position: relative;
     overflow: hidden;
