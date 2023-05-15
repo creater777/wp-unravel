@@ -17,7 +17,7 @@ $current = get_queried_object();
             $subcategories = get_categories(['child_of' => $current->term_id]);
             $subItems = [];
             foreach ($subcategories as $cat) {
-                if ($cat->name != 'Все') {
+                if ($cat->name != 'Все' && $cat->name != 'Всё') {
                     $subItems[] = "<li class='main-menu-item'><a href='" . get_category_link($cat->term_id) . "'>{$cat->name}</a></li>";
                 }
             }
