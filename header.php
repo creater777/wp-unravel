@@ -7,7 +7,7 @@ function makeTitle()
     $blogName = get_bloginfo('name');
     $blogDescription = get_bloginfo('description');
     $category = get_queried_object();
-    return !empty($category) ? get_the_title() . " - " . $blogName : "$blogName - $blogDescription";
+    return !empty($category) ? $category->name . " - " . $blogName : "$blogName - $blogDescription";
 }
 
 $title = makeTitle();
@@ -212,7 +212,7 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/pages.min.css@mtime=1595226416.css"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/grailed.css?v=1"/>
+          href="/wp-content/themes/wp_unravel/css/grailed.css?v=2"/>
 
     <!-- js -->
     <script type="text/javascript"

@@ -31,16 +31,16 @@ $global_id = get_global();
                 </div>
             </div>
         </div>
-<!--        <div class="nav-group">-->
-<!--            <div class="nav-main">-->
-<!--                <ul>-->
-<!--                    --><?php //my_nav_menu(['depth' => 1]); ?>
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
     <div class="h-screen"></div>
 <?endif;?>
+    <div class="nav-group fixed">
+        <div class="nav-main">
+            <ul>
+                <?php my_nav_menu(['depth' => 1]); ?>
+            </ul>
+        </div>
+    </div>
 
     <div id="body">
         <?php if (have_posts()) : ?>

@@ -1,5 +1,6 @@
 @media only screen and (min-width: 993px) {
-  .grailed {
+  .grailed,
+  .nav-group{
     display: none;
   }
 }
@@ -300,44 +301,47 @@
   }
   .fixed {
     position: fixed;
-    top: 55px;
+    top: 54px;
   }
 
   .nav-group {
-    position: relative;
     overflow: hidden;
+    z-index: 10;
+    background-color: #fff;
   }
 
-  //.nav-main ul {
-  //  display: flex;
-  //  white-space: nowrap;
-  //  left: -20px;
-  //  right: -20px;
-  //  padding-left: 20px;
-  //  padding-right: 20px;
-  //  overflow-x: scroll;
-  //  -webkit-overflow-scrolling: touch;
-  //  transition: 0.6s opacity;
-  //}
-  //
-  //.main-menu-item {
-  //  padding-left: 5px;
-  //  display: flex;
-  //}
-  //.main-menu-item:first-child {
-  //  padding-left: 0;
-  //}
-  //.main-menu-item a {
-  //  border: 1px solid rgba(0, 0, 0, 0.3);
-  //  padding: 12.5px;
-  //  line-height: 1;
-  //}
-  //.main-menu-item a:hover {
-  //  border: 1px solid #000;
-  //}
-  //.main-menu-item:last-child {
-  //  padding-right: 20px;
-  //}
+  .nav-main {
+    left: -20px;
+    right: -20px;
+    padding: 5px 20px;
+    width: 100vw;
+
+    ul {
+      display: flex;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      overflow: hidden;
+
+      .main-menu-item {
+        margin-left: 5px;
+        display: flex;
+
+        a {
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          padding: 12.5px;
+          line-height: 1;
+          transition: all 0.6s;
+        }
+        a:hover {
+          border: 1px solid #000;
+        }
+      }
+      .main-menu-item:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
 
   .intro {
   }
@@ -381,15 +385,17 @@
       display: flex;
       flex-wrap: nowrap;
       position: relative;
-      box-sizing: border-box;
 
       &__item{
+        box-sizing: border-box;
         line-height: 55px;
         font-weight: bold;
         font-size: 18px;
         text-transform: uppercase;
         white-space: nowrap;
         margin: 0 40px;
+        position: relative;
+        transition: all linear 100ms;
       }
     }
   }
