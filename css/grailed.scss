@@ -320,7 +320,9 @@
       display: flex;
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
-      overflow: hidden;
+      overflow: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
 
       .main-menu-item {
         margin-left: 5px;
@@ -339,6 +341,10 @@
       .main-menu-item:first-child {
         margin-left: 0;
       }
+    }
+    ul::-webkit-scrollbar {
+      width: 0;
+      height: 0;
     }
   }
 
