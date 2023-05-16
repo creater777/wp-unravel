@@ -28,7 +28,19 @@ $global_id = get_global();
                             <?= __(CFS()->get('logo_text', $global_id)); ?>
                         </div>
                         <ul class="ticker-wrapper__buttons">
-                            <?php my_nav_menu(['depth' => 1]); ?>
+                            <?php
+                            $subcategories = get_categories(['child_of' => 0]);
+                            $subItems = [];
+                            foreach ($subcategories as $cat) {
+                                if (array_search($cat->term_id, [3, 48, 108]) !== false) {
+                                    continue;
+                                }
+                                $subItems[] = "<li class='main-menu-item'><a href='" . get_category_link($cat->term_id) . "'>{$cat->name}</a></li>";
+                            }
+                            if (!empty($subItems)) {
+                                echo implode("", $subItems);
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -36,7 +48,7 @@ $global_id = get_global();
         </div>
     </div>
     <div class="h-screen"></div>
-<?endif; ?>
+<? endif; ?>
     <div id="body">
         <?php if (have_posts()) : ?>
             <div class="container posts">
