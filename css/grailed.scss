@@ -366,14 +366,13 @@
     line-height: 0;
 
     video {
-      z-index: 10;
       -o-object-fit: cover;
       object-fit: cover;
       top: 0;
       bottom: 0;
       right: 0;
       left: 0;
-      height: calc(100vh - 55px - 55px);
+      height: calc(100vh - 55px - 55px - 82px);
       width: 100vw;
       position: relative;
       -o-object-position: center;
@@ -383,7 +382,6 @@
 
 
   .ticker {
-    position: absolute;
     width: 100%;
     overflow: hidden;
 
