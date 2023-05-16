@@ -7,7 +7,9 @@ function makeTitle()
     $blogName = get_bloginfo('name');
     $blogDescription = get_bloginfo('description');
     $category = get_queried_object();
-    return !empty($category) ? $category->name . " - " . $blogName : "$blogName - $blogDescription";
+    return !empty($category)
+        ? ($category->name ?: get_the_title()) . " - " . $blogName
+        : "$blogName - $blogDescription";
 }
 
 $title = makeTitle();
@@ -40,6 +42,10 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <meta property="og:title" content="<?= $title ?>">
     <meta property="og:description" content="">
 
+    <!-- blueimp gallery -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/blueimp-gallery.min.js"></script>
+
     <!-- jquery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript"
@@ -49,6 +55,11 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <script type="text/javascript">
       $.fn.uiSlider = $.fn.slider;
     </script>
+    <!-- blueimp gallery -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/css/blueimp-gallery.min.css"/>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/jquery.blueimp-gallery.js"></script>
 
     <!-- jquery.smoothState.js -->
     <!--script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smoothState.js/0.7.2/jquery.smoothState.min.js"></script-->
@@ -58,10 +69,6 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <!-- materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!-- blueimp gallery -->
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/blueimp-gallery.min.js"></script>
 
     <!-- modernize -->
     <script type="text/javascript"
@@ -182,6 +189,8 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/basic/basic.min.css@mtime=1595226416.css"/>
     <link rel="stylesheet" type="text/css"
+          href="/wp-content/themes/wp_unravel/css/basic/helpers/materialize.min.css@mtime=1595226416.css"/>
+    <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/basic/helpers/jquery-ui.min.css@mtime=1595226416.css"/>
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/basic/helpers/blueimp-gallery.min.css@mtime=1595226416.css"/>
@@ -193,7 +202,7 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
           href="/wp-content/themes/wp_unravel/css/basic/helpers/ckeditor.min.css@mtime=1595226416.css"/>
 
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/layout.min.css@mtime=1617941740.css"/>
+          href="/wp-content/themes/wp_unravel/css/layout.min.css"/>
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/common.min.css@mtime=1595226416.css"/>
     <link rel="stylesheet" type="text/css"
@@ -205,9 +214,11 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/basic.min.js@mtime=1595226416"></script>
     <script type="text/javascript"
+            src="/wp-content/themes/wp_unravel/js/materialize.min.js@mtime=1595226416"></script>
+    <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/dcore.min.js@mtime=1635833016"></script>
     <script type="text/javascript"
-            src="/wp-content/themes/wp_unravel/js/main.min.js@mtime=1595226416"></script>
+            src="/wp-content/themes/wp_unravel/js/main.min.js"></script>
 
     <!-- cf7 -->
     <script src="/wp-content/plugins/contact-form-7/includes/js/index.js" async defer></script>
