@@ -40,10 +40,6 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <meta property="og:title" content="<?= $title ?>">
     <meta property="og:description" content="">
 
-    <!-- blueimp gallery -->
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/blueimp-gallery.min.js"></script>
-
     <!-- jquery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript"
@@ -53,11 +49,6 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <script type="text/javascript">
       $.fn.uiSlider = $.fn.slider;
     </script>
-    <!-- blueimp gallery -->
-    <link rel="stylesheet" type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/css/blueimp-gallery.min.css"/>
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/jquery.blueimp-gallery.js"></script>
 
     <!-- jquery.smoothState.js -->
     <!--script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smoothState.js/0.7.2/jquery.smoothState.min.js"></script-->
@@ -65,11 +56,12 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
             src="/wp-content/themes/wp_unravel/js/jquery.smoothState.min.js@mtime=1595226416"></script>
 
     <!-- materialize -->
-    <!-- EDIT ALSO /css/basic/ckeditor.css -->
-    <link rel="stylesheet" type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- blueimp gallery -->
     <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/blueimp-gallery.min.js"></script>
 
     <!-- modernize -->
     <script type="text/javascript"
@@ -182,18 +174,13 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/js-signals/1.0.0/js-signals.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hasher/1.2.0/hasher.min.js"></script>
-    <!--script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crossroads/0.12.2/crossroads.min.js"></script-->
 
 
     <!-- css -->
-    <!--    <link rel="stylesheet" type="text/css"-->
-    <!--          href="/wp-content/themes/wp_unravel/css/basic/fonts.min.css@mtime=1595226416.css"/>-->
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/basic/dcore.min.css@mtime=1595226416.css"/>
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/basic/basic.min.css@mtime=1595226416.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/basic/helpers/materialize.min.css@mtime=1595226416.css"/>
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/basic/helpers/jquery-ui.min.css@mtime=1595226416.css"/>
     <link rel="stylesheet" type="text/css"
@@ -212,13 +199,11 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/pages.min.css@mtime=1595226416.css"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/grailed.css?v=6"/>
+          href="/wp-content/themes/wp_unravel/css/grailed.css?v=7"/>
 
     <!-- js -->
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/basic.min.js@mtime=1595226416"></script>
-    <script type="text/javascript"
-            src="/wp-content/themes/wp_unravel/js/materialize.min.js@mtime=1595226416"></script>
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/dcore.min.js@mtime=1635833016"></script>
     <script type="text/javascript"
@@ -238,7 +223,8 @@ $global_id = get_global();
 ?>
 <body id="page-works" class="dcore-scaff-mode-list korean page-works">
 
-    <div class="dcore-loading loading"></div>
+<div class="dcore-loading loading"></div>
+<div id="pjax-wrapper">
     <div id="feedback" class="modal">
         <a class="modal-feedback__close" href="#" rel="modal:close"></a>
         <div class="modal-feedback">
@@ -323,6 +309,38 @@ $global_id = get_global();
             </div>
         </div>
     </div>
+    <div class="grailed">
+        <div class="intro">
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="/wp-content/themes/wp_unravel/img/intro.mp4" type="video/mp4">
+                </video>
+                <div class="ticker">
+                    <div class="ticker-wrapper">
+                        <div class="ticker-wrapper__item">
+                            <?= __(CFS()->get('logo_text', $global_id)); ?>
+                        </div>
+                        <ul class="ticker-wrapper__buttons">
+                            <?php
+                            $subcategories = get_categories(['child_of' => 0]);
+                            $subItems = [];
+                            foreach ($subcategories as $cat) {
+                                if (array_search($cat->term_id, [3, 48, 108]) !== false) {
+                                    continue;
+                                }
+                                $subItems[] = "<li class='main-menu-item'><a href='" . get_category_link($cat->term_id) . "'>{$cat->name}</a></li>";
+                            }
+                            if (!empty($subItems)) {
+                                echo implode("", $subItems);
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="h-screen"></div>
     <script>
       $(document).ready(function () {
         $('.dcore-thumbnails .item a.link').on('touchstart', function () {
@@ -330,7 +348,7 @@ $global_id = get_global();
         }).on('touchend', function () {
           $('.dcore-thumbnails .item a.link .info').removeClass('opacity-on')
         });
-      })
+      });
 
       $('.modal-feedback__close').on('click', function () {
         $('.modal').modal('close');
@@ -344,4 +362,41 @@ $global_id = get_global();
           label.text(countFiles ? 'Выбрано файлов: ' + countFiles : labelVal);
         });
       });
+    </script>
+    <script>
+      $(function () {
+        let grailed = $('.grailed'), ticker = $('.ticker'),
+          tickerWrapper = $('.ticker-wrapper'),
+          tickerItem = $('.ticker-wrapper__item'),
+          tickerButtons = $('.ticker-wrapper__buttons'),
+          maxWidth = ticker.width(), left = 0, width = tickerItem.width() + tickerButtons.width() + 80;
+
+
+        function fixBodyPosition() {
+          if ($(window).scrollTop() > grailed.height()) {
+            $('#body').removeClass('fixed');
+            $('.h-screen').css({'display': 'none'});
+          } else {
+            $('#body').addClass('fixed');
+            $('.h-screen').css({'display': 'block'});
+          }
+        };
+        fixBodyPosition();
+        $(document).on('scroll', fixBodyPosition);
+
+        do {
+          tickerWrapper.append(tickerItem.clone());
+          tickerWrapper.append(tickerButtons.clone());
+          width += tickerItem.width() + tickerButtons.width() + 80;
+        } while (width < maxWidth * 2);
+
+        setInterval(function () {
+          left--;
+          tickerWrapper.css({'left': left});
+          if (Math.abs(left) > tickerItem.width() + tickerButtons.width() + 80) {
+            left += tickerItem.width() + tickerButtons.width() + 80;
+            tickerWrapper.css({'left': left});
+          }
+        }, 20);
+      })
     </script>

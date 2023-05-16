@@ -10,32 +10,33 @@
 get_header();
 $current = get_queried_object();
 ?>
-    <div class="nav-group fixed">
-        <div class="nav-main">
-            <span><?= $current->name ?></span>
-            <?
-            $subcategories = get_categories(['child_of' => $current->term_id]);
-            $subItems = [];
-            foreach ($subcategories as $cat) {
-                if ($cat->name != 'Все' && $cat->name != 'Всё') {
-                    $subItems[] = "<li class='main-menu-item'><a href='" . get_category_link($cat->term_id) . "'>{$cat->name}</a></li>";
-                }
-            }
-            if (!empty($subItems)) {
-                echo "<ul>" . implode("", $subItems) . "</ul>";
-            }
-            ?>
-        </div>
-        <script>
-            $(function(){
-              var height = $('.nav-main').height();
-              if (height) {
-                $('#body').offset({top: height + 54});
-              }
-            })
-        </script>
-    </div>
     <div id="body">
+        <div class="nav-group fixed">
+            <div class="nav-main">
+                <span><?= $current->name ?></span>
+                <?
+                $subcategories = get_categories(['child_of' => $current->term_id]);
+                $subItems = [];
+                foreach ($subcategories as $cat) {
+                    if ($cat->name != 'Все' && $cat->name != 'Всё') {
+                        $subItems[] = "<li class='main-menu-item'><a href='" . get_category_link($cat->term_id) . "'>{$cat->name}</a></li>";
+                    }
+                }
+                if (!empty($subItems)) {
+                    echo "<ul>" . implode("", $subItems) . "</ul>";
+                }
+                ?>
+            </div>
+            <script>
+              $(function(){
+                var height = $('.nav-main').height();
+                if (height) {
+                  $('#body').offset({top: height + 54});
+                }
+              })
+            </script>
+        </div>
+
         <?php if (have_posts()) : ?>
             <div class="container posts">
                 <div class="dcore dcore-list dcore-menu-10">
