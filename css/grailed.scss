@@ -316,7 +316,7 @@
     padding: 5px 20px;
     width: 100vw;
     text-transform: uppercase;
-    
+
     ul {
       display: flex;
       white-space: nowrap;
@@ -373,7 +373,7 @@
       bottom: 0;
       right: 0;
       left: 0;
-      height: calc(100vh - 55px - 55px - 82px);
+      height: calc(100vh - 55px - 55px);
       width: 100vw;
       position: relative;
       -o-object-position: center;
@@ -390,18 +390,45 @@
       display: flex;
       flex-wrap: nowrap;
       position: relative;
+      line-height: 55px;
+      text-transform: uppercase;
+      white-space: nowrap;
 
       &__item{
         box-sizing: border-box;
-        line-height: 55px;
         font-weight: bold;
         font-size: 18px;
-        text-transform: uppercase;
         white-space: nowrap;
         margin: 0 40px;
         position: relative;
         transition: all linear 100ms;
+        display: flex;
+
       }
+      &__buttons {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: nowrap;
+        margin: auto 0;
+
+        .main-menu-item {
+          margin-left: 10px;
+
+          a {
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            padding: 4px;
+            line-height: 1;
+            transition: all 0.6s;
+          }
+          a:hover {
+            border: 1px solid #000;
+          }
+        }
+        .main-menu-item:first-child {
+          margin-left: 0;
+        }
+      }
+
     }
   }
 

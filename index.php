@@ -27,11 +27,7 @@ $global_id = get_global();
                         <div class="ticker-wrapper__item">
                             <?= __(CFS()->get('logo_text', $global_id)); ?>
                         </div>
-                    </div>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-main">
-                        <ul>
+                        <ul class="ticker-wrapper__buttons">
                             <?php my_nav_menu(['depth' => 1]); ?>
                         </ul>
                     </div>
@@ -40,7 +36,7 @@ $global_id = get_global();
         </div>
     </div>
     <div class="h-screen"></div>
-<?endif;?>
+<?endif; ?>
     <div id="body">
         <?php if (have_posts()) : ?>
             <div class="container posts">
@@ -68,8 +64,14 @@ $global_id = get_global();
     </div>
     <script>
       $(function () {
-        var grailed = $('.grailed');
-        function fixBodyPosition(){
+        let grailed = $('.grailed'), ticker = $('.ticker'),
+          tickerWrapper = $('.ticker-wrapper'),
+          tickerItem = $('.ticker-wrapper__item'),
+          tickerButtons = $('.ticker-wrapper__buttons'),
+          maxWidth = ticker.width(), left = 0, width = tickerItem.width() + tickerButtons.width() + 80;
+
+
+        function fixBodyPosition() {
           if ($(window).scrollTop() > grailed.height()) {
             $('#body').removeClass('fixed');
             $('.h-screen').css({'display': 'none'});
@@ -81,16 +83,17 @@ $global_id = get_global();
         fixBodyPosition();
         $(document).on('scroll', fixBodyPosition);
 
-        var ticker = $('.ticker'), tickerWrapper = $('.ticker-wrapper'), tickerItem = $('.ticker-wrapper__item'), left = 0, width = 0;
-        while (width < ticker.width()){
+        do {
           tickerWrapper.append(tickerItem.clone());
-          width += tickerItem.width();
-        }
-        setInterval(function(){
-          left --;
+          tickerWrapper.append(tickerButtons.clone());
+          width += tickerItem.width() + tickerButtons.width() + 80;
+        } while (width < maxWidth * 2);
+
+        setInterval(function () {
+          left--;
           tickerWrapper.css({'left': left});
-          if (Math.abs(left + 80) > tickerItem.width()){
-            left += tickerItem.width() + 80;
+          if (Math.abs(left) > tickerItem.width() + tickerButtons.width() + 80) {
+            left += tickerItem.width() + tickerButtons.width() + 80;
             tickerWrapper.css({'left': left});
           }
         }, 20);
