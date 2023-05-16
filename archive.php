@@ -12,7 +12,7 @@ $current = get_queried_object();
 ?>
     <div class="nav-group fixed">
         <div class="nav-main">
-            <h3><?= $current->name ?></h3>
+            <span><?= $current->name ?></span>
             <?
             $subcategories = get_categories(['child_of' => $current->term_id]);
             $subItems = [];
