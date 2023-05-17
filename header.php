@@ -42,29 +42,21 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <meta property="og:title" content="<?= $title ?>">
     <meta property="og:description" content="">
 
-    <!-- blueimp gallery -->
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/blueimp-gallery.min.js"></script>
-
     <!-- jquery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
-    <script type="text/javascript">
-      $.fn.uiSlider = $.fn.slider;
-    </script>
+
     <!-- blueimp gallery -->
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/css/blueimp-gallery.min.css"/>
     <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/jquery.blueimp-gallery.js"></script>
+            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/jquery.blueimp-gallery.min.js"></script>
 
     <!-- jquery.smoothState.js -->
-    <!--script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smoothState.js/0.7.2/jquery.smoothState.min.js"></script-->
-    <script type="text/javascript"
-            src="/wp-content/themes/wp_unravel/js/jquery.smoothState.min.js@mtime=1595226416"></script>
+    <script type="text/javascript" src="/wp-content/themes/wp_unravel/js/jquery.smoothState.min.js@mtime=1595226416"></script>
 
     <!-- materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -76,7 +68,7 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
 
     <!-- tether-tooltip -->
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/basic/helpers/tether-tooltip/tooltip-theme-arrows.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/css/basic/helpers/tether-tooltip/tooltip-theme-arrows.min.css"/>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/js/drop.min.js"></script>
@@ -103,7 +95,7 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.js@mtime=1595226416"></script>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.css"/>
 
     <!-- jquery.select2 -->
     <script type="text/javascript"
@@ -118,13 +110,13 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/jquery.dform/dform.min.js@mtime=1595226416"></script>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/jquery.dform/dform.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/js/jquery.dform/dform.min.css"/>
 
     <!-- jquery.dcomment -->
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/jquery.dcomment/dcomment.min.js@mtime=1595226416"></script>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/jquery.dcomment/dcomment.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/js/jquery.dcomment/dcomment.min.css"/>
 
     <!-- jquery.dsave -->
     <script type="text/javascript"
@@ -132,31 +124,31 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/jquery.dsave/dsave.min.js@mtime=1595226416"></script>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/jquery.dsave/dsave.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/js/jquery.dsave/dsave.min.css"/>
 
     <!-- jquery.dmodal -->
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/jquery.dmodal/dmodal.min.js@mtime=1595226416"></script>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/jquery.dmodal/dmodal.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/js/jquery.dmodal/dmodal.min.css"/>
 
     <!-- jquery.dslide -->
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/jquery.dslide/dslide.min.js@mtime=1595226416"></script>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/jquery.dslide/dslide.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/js/jquery.dslide/dslide.min.css"/>
 
     <!-- jquery.dvideo -->
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/jquery.dvideo/dvideo.min.js@mtime=1635833020"></script>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/jquery.dvideo/dvideo.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/js/jquery.dvideo/dvideo.min.css"/>
 
     <!-- jquery.daudio -->
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/jquery.daudio/daudio.min.js@mtime=1595226416"></script>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/jquery.daudio/daudio.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/js/jquery.daudio/daudio.min.css"/>
 
     <!-- redactor -->
     <script type="text/javascript"
@@ -164,7 +156,7 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/redactor/plugins/source.min.js@mtime=1595226416"></script>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/redactor/redactor.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/js/redactor/redactor.min.css"/>
 
     <!-- momentjs -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
@@ -185,36 +177,26 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
 
     <!-- css -->
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/basic/dcore.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/css/basic/dcore.min.css"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/basic/basic.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/css/basic/basic.min.css"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/basic/helpers/materialize.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/css/basic/helpers/select2.min.css"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/basic/helpers/jquery-ui.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/css/basic/helpers/datepicker.min.css"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/basic/helpers/blueimp-gallery.min.css@mtime=1595226416.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/basic/helpers/select2.min.css@mtime=1595226416.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/basic/helpers/datepicker.min.css@mtime=1595226416.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/basic/helpers/ckeditor.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/css/basic/helpers/ckeditor.min.css"/>
 
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/layout.min.css"/>
+          href="/wp-content/themes/wp_unravel/css/layout.css"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/common.min.css@mtime=1595226416.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/pages.min.css@mtime=1595226416.css"/>
+          href="/wp-content/themes/wp_unravel/css/common.css"/>
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/grailed.css?v=7"/>
 
     <!-- js -->
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/basic.min.js@mtime=1595226416"></script>
-    <script type="text/javascript"
-            src="/wp-content/themes/wp_unravel/js/materialize.min.js@mtime=1595226416"></script>
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/dcore.min.js@mtime=1635833016"></script>
     <script type="text/javascript"
@@ -366,10 +348,10 @@ $global_id = get_global();
       });
 
       $('input[type=file]').each(function () {
-        var label = $(this).parents('.field__file-wrapper').find('.field__file-fake');
-        var labelVal = label.text();
-        $(this).on('change', function (e) {
-          var countFiles = this.files && this.files.length >= 1 && this.files.length;
+        const label = $(this).parents('.field__file-wrapper').find('.field__file-fake');
+        const labelVal = label.text();
+        $(this).on('change', function () {
+          const countFiles = this.files && this.files.length >= 1 && this.files.length;
           label.text(countFiles ? 'Выбрано файлов: ' + countFiles : labelVal);
         });
       });
@@ -382,16 +364,15 @@ $global_id = get_global();
           tickerButtons = $('.ticker-wrapper__buttons'),
           maxWidth = ticker.width(), left = 0, width = tickerItem.width() + tickerButtons.width() + 80;
 
-
         function fixBodyPosition() {
-          if ($(window).scrollTop() > grailed.height()) {
+          if (window.scrollY > grailed.height()) {
             $('#body').removeClass('fixed');
             $('.h-screen').css({'display': 'none'});
           } else {
             $('#body').addClass('fixed');
             $('.h-screen').css({'display': 'block'});
           }
-        };
+        }
         fixBodyPosition();
         $(document).on('scroll', fixBodyPosition);
 
