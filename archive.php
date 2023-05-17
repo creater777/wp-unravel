@@ -30,9 +30,11 @@ $current = get_queried_object();
             <script>
               $(function(){
                 var height = $('.nav-main').height();
-                if (height) {
-                  $('#body').offset({top: height + 54});
-                }
+                $(window).on('scroll', function(){
+                  if (height) {
+                    $('#body').css({'margin-top': height});
+                  }
+                });
               })
             </script>
         </div>
@@ -46,7 +48,10 @@ $current = get_queried_object();
                             /* Start the Loop */
                             global $post;
                             foreach (get_posts(['numberposts' => -1, 'category' => $current->cat_ID]) as $p){
-                                $post = $p;
+                                if (!have_posts()){
+                                    break;
+                                }
+                                the_post();
                                 get_template_part('template-parts/content');
                             }
                             echo get_the_posts_navigation();

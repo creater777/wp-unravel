@@ -56,7 +56,8 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
             src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.1/js/jquery.blueimp-gallery.min.js"></script>
 
     <!-- jquery.smoothState.js -->
-    <script type="text/javascript" src="/wp-content/themes/wp_unravel/js/jquery.smoothState.min.js@mtime=1595226416"></script>
+    <script type="text/javascript"
+            src="/wp-content/themes/wp_unravel/js/jquery.smoothState.min.js@mtime=1595226416"></script>
 
     <!-- materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -126,11 +127,8 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/js/jquery.dsave/dsave.min.css"/>
 
-    <!-- jquery.dmodal -->
-    <script type="text/javascript"
-            src="/wp-content/themes/wp_unravel/js/jquery.dmodal/dmodal.min.js@mtime=1595226416"></script>
-    <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/jquery.dmodal/dmodal.min.css"/>
+    <!-- jquery.modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 
     <!-- jquery.dslide -->
     <script type="text/javascript"
@@ -190,7 +188,7 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/layout.css"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/common.css"/>
+          href="/wp-content/themes/wp_unravel/css/common.css?v=1"/>
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/grailed.css?v=7"/>
 
@@ -201,7 +199,6 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
             src="/wp-content/themes/wp_unravel/js/dcore.min.js@mtime=1635833016"></script>
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/main.min.js"></script>
-
     <!-- cf7 -->
     <script src="/wp-content/plugins/contact-form-7/includes/js/index.js" async defer></script>
     <link rel="stylesheet" type="text/css"
@@ -219,9 +216,9 @@ $global_id = get_global();
 <div class="dcore-loading loading"></div>
 <div id="pjax-wrapper">
     <div id="feedback" class="modal">
-        <a class="modal-feedback__close" href="#" rel="modal:close"></a>
+        <a class="modal-feedback__close" href="#close-modal" rel="modal:close"></a>
         <div class="modal-feedback">
-            <?php echo do_shortcode('[contact-form-7 id="557" title="Отправить запрос"]'); ?>
+            <?= do_shortcode('[contact-form-7 id="557" title="Отправить запрос"]'); ?>
         </div>
     </div>
     <div id="body-info" data-id="page-works" data-class="dcore-scaff-mode-list korean page-works"></div>
@@ -335,16 +332,12 @@ $global_id = get_global();
     </div>
     <div class="h-screen"></div>
     <script>
-      $(document).ready(function () {
+      $(function () {
         $('.dcore-thumbnails .item a.link').on('touchstart', function () {
           $(this).find('.info').addClass('opacity-on');
         }).on('touchend', function () {
           $('.dcore-thumbnails .item a.link .info').removeClass('opacity-on')
         });
-      });
-
-      $('.modal-feedback__close').on('click', function () {
-        $('.modal').modal('close');
       });
 
       $('input[type=file]').each(function () {
@@ -373,6 +366,7 @@ $global_id = get_global();
             $('.h-screen').css({'display': 'block'});
           }
         }
+
         fixBodyPosition();
         $(document).on('scroll', fixBodyPosition);
 
