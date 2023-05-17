@@ -44,11 +44,12 @@ $current = get_queried_object();
                         <div class="items">
                             <?php
                             /* Start the Loop */
-                            while (have_posts()) {
-                                the_post();
+                            global $post;
+                            foreach (get_posts(['numberposts' => -1, 'category' => $current->cat_ID]) as $p){
+                                $post = $p;
                                 get_template_part('template-parts/content');
                             }
-                            the_posts_navigation();
+                            echo get_the_posts_navigation();
                             ?>
                         </div>
                     </div>
