@@ -289,7 +289,6 @@
   .grailed {
     display: flow-root;
     position: relative;
-    height: calc(100vh - 110px);;
     z-index: 100;
     width: 100%;
     vertical-align: middle;
@@ -355,7 +354,7 @@
   }
 
   .h-screen{
-    height: 100vh;
+    height: calc(100vh + 55px);
     visibility: hidden;
     display: block;
   }
@@ -363,7 +362,6 @@
   .video-wrapper {
     max-width: 100%;
     overflow: hidden;
-    height: calc(100vh - 55px);
     background-color: #fff;
     line-height: 0;
 
