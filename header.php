@@ -188,9 +188,9 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/layout.css"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/common.css?v=1"/>
+          href="/wp-content/themes/wp_unravel/css/common.css?v=2"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/grailed.css?v=8"/>
+          href="/wp-content/themes/wp_unravel/css/grailed.css?v=9"/>
 
     <!-- js -->
     <script type="text/javascript"
@@ -198,7 +198,7 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/dcore.min.js@mtime=1635833016"></script>
     <script type="text/javascript"
-            src="/wp-content/themes/wp_unravel/js/main.min.js?v=1"></script>
+            src="/wp-content/themes/wp_unravel/js/main.min.js?v=2"></script>
     <!-- cf7 -->
     <script src="/wp-content/plugins/contact-form-7/includes/js/index.js" async defer></script>
     <link rel="stylesheet" type="text/css"
@@ -300,38 +300,6 @@ $global_id = get_global();
             </div>
         </div>
     </div>
-    <div class="grailed">
-        <div class="intro">
-            <div class="video-wrapper">
-                <video autoplay loop muted playsinline poster="/wp-content/themes/wp_unravel/img/poster.jpg">
-                    <source src="/wp-content/themes/wp_unravel/img/intro.mp4" type="video/mp4">
-                </video>
-                <div class="ticker">
-                    <div class="ticker-wrapper">
-                        <div class="ticker-wrapper__item">
-                            <?= __(CFS()->get('logo_text', $global_id)); ?>
-                        </div>
-                        <ul class="ticker-wrapper__buttons">
-                            <?php
-                            $subcategories = get_categories(['child_of' => 0]);
-                            $subItems = [];
-                            foreach ($subcategories as $cat) {
-                                if (array_search($cat->term_id, [3, 48, 108]) !== false) {
-                                    continue;
-                                }
-                                $subItems[] = "<li class='main-menu-item'><a href='" . get_category_link($cat->term_id) . "'>{$cat->name}</a></li>";
-                            }
-                            if (!empty($subItems)) {
-                                echo implode("", $subItems);
-                            }
-                            ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="h-screen"></div>
 
     <script>
       $(function () {
@@ -350,44 +318,4 @@ $global_id = get_global();
           label.text(countFiles ? 'Выбрано файлов: ' + countFiles : labelVal);
         });
       });
-    </script>
-
-    <script>
-      $(function () {
-        let grailed = $('.grailed'), ticker = $('.ticker'),
-          tickerWrapper = $('.ticker-wrapper'),
-          tickerItem = $('.ticker-wrapper__item'),
-          tickerButtons = $('.ticker-wrapper__buttons'),
-          maxWidth = ticker.width(), left = 0, width = tickerItem.width() + tickerButtons.width() + 80;
-
-        function fixBodyPosition() {
-          const body = $('#body'), iscreen = $('.h-screen');
-          console.log(grailed.height(), body.height());
-          if (window.scrollY > grailed.height() && body.height() > grailed.height()) {
-            body.removeClass('fixed');
-            iscreen.css({'display': 'none'});
-          } else {
-            body.addClass('fixed');
-            iscreen.css({'display': 'block'});
-          }
-        }
-
-        fixBodyPosition();
-        $(document).on('scroll', fixBodyPosition);
-
-        do {
-          tickerWrapper.append(tickerItem.clone());
-          tickerWrapper.append(tickerButtons.clone());
-          width += tickerItem.width() + tickerButtons.width() + 80;
-        } while (width < maxWidth * 2);
-
-        setInterval(function () {
-          left--;
-          tickerWrapper.css({'left': left});
-          if (Math.abs(left) > tickerItem.width() + tickerButtons.width() + 80) {
-            left += tickerItem.width() + tickerButtons.width() + 80;
-            tickerWrapper.css({'left': left});
-          }
-        }, 20);
-      })
     </script>

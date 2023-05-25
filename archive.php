@@ -27,16 +27,6 @@ $current = get_queried_object();
                 }
                 ?>
             </div>
-            <script>
-              $(function(){
-                var height = $('.nav-main').height();
-                $(window).on('scroll', function(){
-                  if (height) {
-                    $('#body').css({'padding-top': height});
-                  }
-                });
-              })
-            </script>
         </div>
 
         <?php if (have_posts()) : ?>
