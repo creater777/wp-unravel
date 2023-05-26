@@ -93,10 +93,10 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
 
     <!-- jqueryui.timepicker -->
-    <script type="text/javascript"
-            src="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.js@mtime=1595226416"></script>
-    <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.css"/>
+<!--    <script type="text/javascript"-->
+<!--            src="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.js@mtime=1595226416"></script>-->
+<!--    <link rel="stylesheet" type="text/css"-->
+<!--          href="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.css"/>-->
 
     <!-- jquery.select2 -->
     <script type="text/javascript"
@@ -149,12 +149,12 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
           href="/wp-content/themes/wp_unravel/js/jquery.daudio/daudio.min.css"/>
 
     <!-- redactor -->
-    <script type="text/javascript"
-            src="/wp-content/themes/wp_unravel/js/redactor/redactor.js@mtime=1595226416"></script>
-    <script type="text/javascript"
-            src="/wp-content/themes/wp_unravel/js/redactor/plugins/source.min.js@mtime=1595226416"></script>
-    <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/js/redactor/redactor.min.css"/>
+<!--    <script type="text/javascript"-->
+<!--            src="/wp-content/themes/wp_unravel/js/redactor/redactor.js@mtime=1595226416"></script>-->
+<!--    <script type="text/javascript"-->
+<!--            src="/wp-content/themes/wp_unravel/js/redactor/plugins/source.min.js@mtime=1595226416"></script>-->
+<!--    <link rel="stylesheet" type="text/css"-->
+<!--          href="/wp-content/themes/wp_unravel/js/redactor/redactor.min.css"/>-->
 
     <!-- momentjs -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
@@ -193,8 +193,8 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
           href="/wp-content/themes/wp_unravel/css/grailed.css?v=9"/>
 
     <!-- js -->
-    <script type="text/javascript"
-            src="/wp-content/themes/wp_unravel/js/basic.min.js@mtime=1595226416"></script>
+<!--    <script type="text/javascript"-->
+<!--            src="/wp-content/themes/wp_unravel/js/basic.min.js@mtime=1595226416"></script>-->
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/dcore.min.js@mtime=1635833016"></script>
     <script type="text/javascript"
