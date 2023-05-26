@@ -193,8 +193,8 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
           href="/wp-content/themes/wp_unravel/css/grailed.css?v=9"/>
 
     <!-- js -->
-<!--    <script type="text/javascript"-->
-<!--            src="/wp-content/themes/wp_unravel/js/basic.min.js@mtime=1595226416"></script>-->
+    <script type="text/javascript"
+            src="/wp-content/themes/wp_unravel/js/basic.min.js@mtime=1595226416"></script>
     <script type="text/javascript"
             src="/wp-content/themes/wp_unravel/js/dcore.min.js@mtime=1635833016"></script>
     <script type="text/javascript"
