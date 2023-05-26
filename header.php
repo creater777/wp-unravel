@@ -228,7 +228,7 @@ $global_id = get_global();
                 <div id="logo">
                     <a href="<?= home_url(); ?>" class="logo">
                         <video autoplay playsinline muted loop
-                               poster="/wp-content/themes/wp_unravel/img/<?= get_locale() === 'en_US' ? 'logo_en.jpg' : 'logo_ru.jpg' ?>"
+                               poster="/wp-content/themes/wp_unravel/img/<?= get_locale() === 'en_US' ? 'logo_en.png' : 'logo_ru.png' ?>"
                                style="max-height: 20px; object-fit: cover; margin-left: -2px;">
                             <source
                                 src="/wp-content/themes/wp_unravel/img/<?= get_locale() === 'en_US' ? 'logo_en.mp4' : 'logo_ru.mp4' ?>"
