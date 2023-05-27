@@ -85,13 +85,11 @@ $global_id = get_global();
         function fixBodyPosition() {
           const body = $('#body'), iscreen = $('.h-screen');
           const height = $('.nav-main').height();
-          $(window).on('scroll', function(){
-            if (height) {
-              $('#body').css({'padding-top': height});
-            } else {
-              $('#body').css({'padding-top': 0});
-            }
-          });
+          if (height) {
+            body.css({'padding-top': height});
+          } else {
+            body.css({'padding-top': 0});
+          }
 
           if (window.scrollY >= grailed.height() && body.height() > grailed.height()) {
             body.removeClass('fixed');
