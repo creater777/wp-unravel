@@ -82,12 +82,13 @@ $global_id = get_global();
         tickerButtons = $('.ticker-wrapper__buttons'),
         left = 0, width = tickerItem.width() + tickerButtons.width() + 80,
 
-        timer = 0;
+        timer = 0, isScroll = false;
 
       function fixBodyPosition() {
         const body = $('#body'), iscreen = $('.h-screen');
         const height = $('.nav-main').height();
-        clearInterval(timer);
+        timer && clearTimeout(timer);
+
         if (height) {
           body.css({'padding-top': height});
         } else {
@@ -95,25 +96,30 @@ $global_id = get_global();
         }
 
         if (window.scrollY >= grailed.height() && body.height() > grailed.height()) {
-          clearInterval(timer);
-          timer = setInterval(function () {
-            window.scrollTo({
-              top: window.scrollY + 1,
+          timer = setTimeout(function () {
+            !isScroll && window.scroll({
+              top: window.scrollY + 10,
               behavior: 'smooth',
             });
           }, 10);
           body.removeClass('fixed');
           iscreen.css({'display': 'none'});
         } else {
+          timer = 0;
           body.addClass('fixed');
           iscreen.css({'display': 'block'});
         }
       }
 
       fixBodyPosition();
-      $(document).on('touchmove', fixBodyPosition);
-      $(document).on('touchstart', fixBodyPosition);
-      $(document).on('touchend', fixBodyPosition);
+      $(document).on('touchstart', function(){
+        isScroll = true;
+        fixBodyPosition();
+      });
+      $(document).on('touchend', function(){
+        isScroll = false;
+        fixBodyPosition();
+      });
       $(document).on('scroll', fixBodyPosition);
 
       do {
