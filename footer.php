@@ -10,14 +10,24 @@
 
       timer = 0, isScroll = false;
 
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
+    function stop() {
+      clearTimeout(timer);
+      timer = 0;
+    }
+
+    function start(){
+      stop();
+      timer = setTimeout(function () {
+        !isScroll && window.scroll({
+          top: window.scrollY + 2,
+        });
+        window.requestAnimationFrame(start);
+      }, 10);
     }
 
     function fixBodyPosition() {
       const body = $('#body'), iscreen = $('.h-screen');
       const height = $('.nav-main').height();
-      timer && clearTimeout(timer);
 
       if (height) {
         body.css({'padding-top': height});
@@ -28,18 +38,11 @@
       if (grailed.is(":hidden") || !grailed.length ||
         window.scrollY >= grailed.height() && body.height() > grailed.height())
       {
-        // console.log('grailed ' + grailed.height(), 'scrol ' + window.scrollY)
-        timer = setTimeout(function () {
-          !isScroll && window.scroll({
-            top: window.scrollY + 5,
-            behavior: 'smooth',
-          });
-        }, 10);
-
+        start();
         body.removeClass('fixed');
         iscreen.css({'display': 'none'});
       } else {
-        timer = 0;
+        stop();
         body.addClass('fixed');
         iscreen.css({'display': 'block'});
       }
@@ -55,6 +58,12 @@
       fixBodyPosition();
     });
     $(document).on('scroll', fixBodyPosition);
+    $(document).on('visibilitychange', function(){
+      console.log('visibilitychange ' + document.hidden)
+      isScroll = false;
+      stop();
+      !document.hidden && fixBodyPosition();
+    });
 
     do {
       tickerWrapper.append(tickerItem.clone());
