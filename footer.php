@@ -7,6 +7,7 @@
     const height = $('.nav-main').height();
     const grailed = $('.grailed');
     let timer = 0, pause = false, isScroll = false;
+    body.on('contextmenu', () => false);
 
     function start(){
       !timer && (timer = setTimeout(function () {
