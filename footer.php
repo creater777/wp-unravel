@@ -2,86 +2,76 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    let grailed = $('.grailed'), ticker = $('.ticker'),
-      tickerWrapper = $('.ticker-wrapper'),
-      tickerItem = $('.ticker-wrapper__item'),
-      tickerButtons = $('.ticker-wrapper__buttons'),
-      left = 0, width = tickerItem.width() + tickerButtons.width() + 80,
-
-      timer = 0, isScroll = false;
-
-    function stop() {
-      clearTimeout(timer);
-      timer = 0;
-    }
+    const body = $('#body');
+    const iscreen = $('.h-screen');
+    const height = $('.nav-main').height();
+    const grailed = $('.grailed');
+    let timer = 0, pause = false, isScroll = false;
 
     function start(){
       !timer && (timer = setTimeout(function () {
-        !isScroll && window.scroll({
-          top: window.scrollY + 2,
-        });
         timer = 0;
-        window.requestAnimationFrame(start);
+        !isScroll && !pause && window.scrollBy(0, 1);
+        start();
       }, 10));
     }
 
     function fixBodyPosition() {
-      const body = $('#body'), iscreen = $('.h-screen');
-      const height = $('.nav-main').height();
-
-      if (height) {
-        body.css({'padding-top': height});
-      } else {
-        body.css({'padding-top': 0});
-      }
+      body.css({'padding-top': height ? height : 0});
 
       if (grailed.is(":hidden") || !grailed.length ||
         window.scrollY >= grailed.height() && body.height() > grailed.height())
       {
-        window.requestAnimationFrame(start);
         body.removeClass('fixed');
         iscreen.css({'display': 'none'});
+        isScroll = false;
       } else {
         body.addClass('fixed');
         iscreen.css({'display': 'block'});
-        stop();
+        isScroll = true;
       }
     }
 
-    fixBodyPosition();
-    $(document).on('touchstart', function () {
+    start();
+    $(document).on('touchmove', () => body.trigger('scroll'));
+    $(document).on('scroll', () => {
       isScroll = true;
-      fixBodyPosition();
+      fixBodyPosition()
     });
-    $(document).on('touchend', function () {
-      isScroll = false;
-      fixBodyPosition();
-    });
-    $(document).on('scroll', fixBodyPosition);
-    $(document).on('visibilitychange', function(){
-      isScroll = false;
-      stop();
-      !document.hidden && fixBodyPosition();
-    });
+    $(document).on('visibilitychange', () => !document.hidden && body.trigger('scroll'));
+    body.on('mousedown', () => pause = true);
+    body.on('mouseup', () => pause = false);
+    body.on('touchstart', () => pause = true);
+    body.on('touchend', () => pause = false);
+    fixBodyPosition();
 
-    do {
-      tickerWrapper.append(tickerItem.clone());
-      tickerWrapper.append(tickerButtons.clone());
-      width += tickerItem.width() + tickerButtons.width() + 80;
-    } while (width < ticker.width() * 2);
+    function doRunningLine(){
+      let ticker = $('.ticker'),
+        tickerWrapper = $('.ticker-wrapper'),
+        tickerItem = $('.ticker-wrapper__item'),
+        tickerButtons = $('.ticker-wrapper__buttons'),
+        left = 0, width = tickerItem.width() + tickerButtons.width() + 80;
 
-    function runningLine(){
-      setTimeout(function () {
-        left--;
-        tickerWrapper.css({'left': left});
-        if (Math.abs(left) > tickerItem.width() + tickerButtons.width() + 80) {
-          left += tickerItem.width() + tickerButtons.width() + 80;
+      do {
+        tickerWrapper.append(tickerItem.clone());
+        tickerWrapper.append(tickerButtons.clone());
+        width += tickerItem.width() + tickerButtons.width() + 80;
+      } while (width < ticker.width() * 2);
+
+      function runningLine(){
+        setTimeout(function () {
+          left--;
           tickerWrapper.css({'left': left});
-        }
-        window.requestAnimationFrame(runningLine);
-      }, 20);
+          if (Math.abs(left) > tickerItem.width() + tickerButtons.width() + 80) {
+            left += tickerItem.width() + tickerButtons.width() + 80;
+            tickerWrapper.css({'left': left});
+          }
+          runningLine();
+        }, 20);
+      }
+      runningLine();
     }
-    window.requestAnimationFrame(runningLine);
+    doRunningLine();
   })
 </script>
 </body>
