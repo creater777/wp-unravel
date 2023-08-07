@@ -12,7 +12,7 @@
       !timer && (timer = setTimeout(function () {
         timer = 0;
         !isScroll && !pause && window.scrollBy(0, 1);
-        start();
+        window.requestAnimationFrame(start);
       }, 10));
     }
 
@@ -34,7 +34,8 @@
 
     start();
     $(document).on('touchmove', () => body.trigger('scroll'));
-    $(document).on('scroll', () => {
+    $(document).on('scroll', (e) => {
+      e.preventDefault();
       isScroll = true;
       fixBodyPosition()
     });
@@ -66,10 +67,10 @@
             left += tickerItem.width() + tickerButtons.width() + 80;
             tickerWrapper.css({'left': left});
           }
-          runningLine();
+          window.requestAnimationFrame(runningLine);
         }, 20);
       }
-      runningLine();
+      window.requestAnimationFrame(runningLine);
     }
     doRunningLine();
   })
