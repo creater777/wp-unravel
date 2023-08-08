@@ -14,7 +14,7 @@
         timer = 0;
         !isScroll && !pause && window.scrollBy(0, 1);
         window.requestAnimationFrame(start);
-      }, 10));
+      }, 20));
     }
 
     function fixBodyPosition() {
@@ -38,13 +38,17 @@
     $(document).on('scroll', (e) => {
       e.preventDefault();
       isScroll = true;
-      fixBodyPosition()
+      fixBodyPosition();
     });
     $(document).on('visibilitychange', () => !document.hidden && body.trigger('scroll'));
     body.on('mousedown', () => pause = true);
     body.on('mouseup', () => pause = false);
-    body.on('touchstart', () => pause = true);
-    body.on('touchend', () => pause = false);
+    body.on('touchstart', () => {
+      pause = true
+    });
+    body.on('touchend', () => {
+      pause = false
+    });
     fixBodyPosition();
 
     function doRunningLine(){
