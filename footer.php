@@ -1,5 +1,4 @@
 <?php wp_footer(); // необходимо для работы плагинов и функционала  ?>
-</div>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const body = $('#body');
@@ -80,5 +79,6 @@
     doRunningLine();
   })
 </script>
+</div>
 </body>
 </html>

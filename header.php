@@ -226,13 +226,13 @@ $global_id = get_global();
         </div>
     </div>
 </div>
+<div id="feedback" class="modal">
+  <a class="modal-feedback__close" href="#close-modal" rel="modal:close"></a>
+  <div class="modal-feedback">
+      <?= do_shortcode('[contact-form-7 id="557" title="Отправить запрос"]'); ?>
+  </div>
+</div>
 <div id="pjax-wrapper">
-    <div id="feedback" class="modal">
-        <a class="modal-feedback__close" href="#close-modal" rel="modal:close"></a>
-        <div class="modal-feedback">
-            <?= do_shortcode('[contact-form-7 id="557" title="Отправить запрос"]'); ?>
-        </div>
-    </div>
     <div id="body-info" data-id="page-works" data-class="dcore-scaff-mode-list korean page-works"></div>
     <div id="header" class="underline">
         <div class="container">
