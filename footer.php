@@ -56,20 +56,20 @@
         tickerWrapper = $('.ticker-wrapper'),
         tickerItem = $('.ticker-wrapper__item'),
         tickerButtons = $('.ticker-wrapper__buttons'),
-        left = 0, width = tickerItem.width() + tickerButtons.width() + 80;
+        left = 0, width = tickerItem.width() + tickerButtons.width() + 10;
 
       do {
         tickerWrapper.append(tickerItem.clone());
         tickerWrapper.append(tickerButtons.clone());
-        width += tickerItem.width() + tickerButtons.width() + 80;
-      } while (width < ticker.width() * 2);
+        width += tickerItem.width() + tickerButtons.width() + 10;
+      } while (width < ticker.width() * 2)
 
       function runningLine(){
         setTimeout(function () {
           left--;
           tickerWrapper.css({'left': left});
-          if (Math.abs(left) > tickerItem.width() + tickerButtons.width() + 80) {
-            left += tickerItem.width() + tickerButtons.width() + 80;
+          if (Math.abs(left) > tickerItem.width() + tickerButtons.width() + 10) {
+            left += tickerItem.width() + tickerButtons.width() + 10;
             tickerWrapper.css({'left': left});
           }
           window.requestAnimationFrame(runningLine);

@@ -190,7 +190,7 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
     <link rel="stylesheet" type="text/css"
           href="/wp-content/themes/wp_unravel/css/common.css?v=2"/>
     <link rel="stylesheet" type="text/css"
-          href="/wp-content/themes/wp_unravel/css/grailed.css?v=9"/>
+          href="/wp-content/themes/wp_unravel/css/grailed.css?v=2"/>
 
     <!-- js -->
     <script type="text/javascript"

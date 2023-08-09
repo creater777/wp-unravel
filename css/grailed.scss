@@ -172,38 +172,39 @@
     content: "";
     clear: both;
   }
-  #nav-group > .outer > .inner #nav {
+  #nav {
     padding-bottom: 60px;
-  }
-  #nav-group > .outer > .inner #nav > ul {
-    padding: 0;
-    margin: 0;
-  }
-  #nav-group > .outer > .inner #nav > ul li {
-    margin: 8px 0;
-  }
-  #nav-group > .outer > .inner #nav > ul > li {
-    position: relative;
-  }
-  #nav-group > .outer > .inner #nav > ul > li > ul {
-    display: none;
-    padding-bottom: 26px;
-  }
-  #nav-group > .outer > .inner #nav > ul > li > ul > li {
-    position: relative;
-  }
-  #nav-group > .outer > .inner #nav > ul > li > ul > li:before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: -15px;
-    width: 6px;
-    height: 1px;
-    top: 15px;
-    background-color: #000;
-  }
-  #nav-group > .outer > .inner #nav > ul > li ul {
-    padding-left: 15px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 8px 0;
+        position: relative;
+
+        ul {
+          display: none;
+          padding-bottom: 26px;
+          padding-left: 15px;
+
+          li {
+            position: relative;
+
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              left: -15px;
+              width: 6px;
+              height: 1px;
+              top: 15px;
+              background-color: #000;
+            }
+          }
+        }
+      }
+    }
   }
   #nav-group > .outer > .inner #nav > ul > li > button {
     display: none;
@@ -331,9 +332,9 @@
         a:hover {
           border: 1px solid #000;
         }
-      }
-      .main-menu-item:first-child {
-        margin-left: 0;
+        &:first-child {
+          margin-left: 0;
+        }
       }
     }
     ul::-webkit-scrollbar {
@@ -387,15 +388,19 @@
       white-space: nowrap;
       font-weight: bold;
       font-size: 18px;
+      //transition: all linear 100ms;
 
       &__item{
         box-sizing: border-box;
         white-space: nowrap;
-        margin: 0 40px;
+        margin-left: 10px;
         position: relative;
-        transition: all linear 100ms;
-        display: flex;
 
+        &:after{
+          content: '+';
+          padding-left: 10px;
+          font-size: 20pt;
+        }
       }
       &__buttons {
         box-sizing: border-box;
@@ -416,9 +421,12 @@
             text-decoration: underline;
             border: 0;
           }
-        }
-        .main-menu-item:first-child {
-          margin-left: 0;
+
+          &:after{
+            content: '+';
+            padding-left: 10px;
+            font-size: 20pt;
+          }
         }
       }
 
