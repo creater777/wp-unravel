@@ -15,11 +15,6 @@ function makeTitle()
 $title = makeTitle();
 
 empty(session_id()) && session_start();
-if (isset($_GET['_lang'])) {
-    $_SESSION['_lang'] = $_GET['_lang'];
-}
-isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_lang']);
-
 ?>
 
 <!DOCTYPE html>
@@ -93,10 +88,10 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
 
     <!-- jqueryui.timepicker -->
-<!--    <script type="text/javascript"-->
-<!--            src="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.js@mtime=1595226416"></script>-->
-<!--    <link rel="stylesheet" type="text/css"-->
-<!--          href="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.css"/>-->
+    <!--    <script type="text/javascript"-->
+    <!--            src="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.js@mtime=1595226416"></script>-->
+    <!--    <link rel="stylesheet" type="text/css"-->
+    <!--          href="/wp-content/themes/wp_unravel/js/jqueryui.timepicker/jquery-ui-timepicker-addon.min.css"/>-->
 
     <!-- jquery.select2 -->
     <script type="text/javascript"
@@ -149,12 +144,12 @@ isset($_SESSION) && isset($_SESSION['_lang']) && switch_to_locale($_SESSION['_la
           href="/wp-content/themes/wp_unravel/js/jquery.daudio/daudio.min.css"/>
 
     <!-- redactor -->
-<!--    <script type="text/javascript"-->
-<!--            src="/wp-content/themes/wp_unravel/js/redactor/redactor.js@mtime=1595226416"></script>-->
-<!--    <script type="text/javascript"-->
-<!--            src="/wp-content/themes/wp_unravel/js/redactor/plugins/source.min.js@mtime=1595226416"></script>-->
-<!--    <link rel="stylesheet" type="text/css"-->
-<!--          href="/wp-content/themes/wp_unravel/js/redactor/redactor.min.css"/>-->
+    <!--    <script type="text/javascript"-->
+    <!--            src="/wp-content/themes/wp_unravel/js/redactor/redactor.js@mtime=1595226416"></script>-->
+    <!--    <script type="text/javascript"-->
+    <!--            src="/wp-content/themes/wp_unravel/js/redactor/plugins/source.min.js@mtime=1595226416"></script>-->
+    <!--    <link rel="stylesheet" type="text/css"-->
+    <!--          href="/wp-content/themes/wp_unravel/js/redactor/redactor.min.css"/>-->
 
     <!-- momentjs -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
@@ -218,23 +213,26 @@ $global_id = get_global();
         <div class="spinner-layer spinner-blue-only">
             <div class="circle-clipper left">
                 <div class="circle"></div>
-            </div><div class="gap-patch">
+            </div>
+            <div class="gap-patch">
                 <div class="circle"></div>
-            </div><div class="circle-clipper right">
+            </div>
+            <div class="circle-clipper right">
                 <div class="circle"></div>
             </div>
         </div>
     </div>
 </div>
-<div id="feedback" class="modal">
-  <a class="modal-feedback__close" href="#close-modal" rel="modal:close"></a>
-  <div class="modal-feedback">
-      <?= do_shortcode('[contact-form-7 id="557" title="Отправить запрос"]'); ?>
-  </div>
-</div>
+
 <div id="pjax-wrapper">
     <div id="body-info" data-id="page-works" data-class="dcore-scaff-mode-list korean page-works"></div>
     <div id="header" class="underline">
+        <div id="feedback" class="modal">
+            <a class="modal-feedback__close" href="#close-modal" rel="modal:close"></a>
+            <div class="modal-feedback" data-trp-gettext>
+                <?= do_shortcode('[contact-form-7 id="557" title="Отправить запрос" data-trp-gettext]'); ?>
+            </div>
+        </div>
         <div class="container">
             <div class="relative">
                 <div id="logo">
@@ -243,8 +241,8 @@ $global_id = get_global();
                                poster="/wp-content/themes/wp_unravel/img/<?= get_locale() === 'en_US' ? 'logo_en.png' : 'logo_ru.png' ?>"
                                style="max-height: 20px; object-fit: cover; margin-left: -2px;">
                             <source
-                                src="/wp-content/themes/wp_unravel/img/<?= get_locale() === 'en_US' ? 'logo_en.mp4' : 'logo_ru.mp4' ?>"
-                                type="video/mp4">
+                                    src="/wp-content/themes/wp_unravel/img/<?= get_locale() === 'en_US' ? 'logo_en.mp4' : 'logo_ru.mp4' ?>"
+                                    type="video/mp4">
                         </video>
                         <div><?= __(CFS()->get('logo_text', $global_id)); ?></div>
                         <br>
