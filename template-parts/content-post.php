@@ -39,16 +39,11 @@ $gallert = CFS()->get('gallery_post');
         <? foreach ($gallert as $item) : ?>
             <? if (!empty($item['gallery_image'])): ?>
                 <div class="dcore-section dcore-section-images">
-                    <div class="dcore-image-view">
-                        <div class="row">
-                            <div class="item col s12">
-                                <a href="<? echo $item['gallery_image']; ?>" class="image" target="_blank"
-                                   data-gallery="#dcore-image-gallery"
-                                   style="padding-bottom: 56.25%; background-image: url(<? echo $item['gallery_image']; ?>);"></a>
-
-                            </div>
-                        </div> <!-- .row -->
-                    </div> <!-- .dcore-image-view -->
+                  <div class="dcore-image-view">
+                    <a href="<? echo $item['gallery_image']; ?>" class="image" target="_blank"
+                       data-gallery="#dcore-image-gallery"
+                       style="padding-bottom: 56.25%; background-image: url(<? echo $item['gallery_image']; ?>);"></a>
+                  </div>
                 </div>
             <? endif; ?>
             <? if (!empty($item['gallery_video'])): ?>
